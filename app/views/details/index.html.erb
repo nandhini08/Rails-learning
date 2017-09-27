@@ -1,0 +1,24 @@
+<h>
+	Personal Details
+</h>
+<%= link_to 'New Entry',  new_detail_path %>
+<table>
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>Address</th>
+  </tr>
+ 
+  <% @details.each do |det| %>
+    <tr>
+      <td><%= det.FirstName %></td>
+      <td><%= det.LastName %></td>
+      <td><%= det.Address %></td>
+      <td><%= link_to 'Show', detail_path(det) %></td>
+      <td><%= link_to 'Edit', edit_detail_path(det) %></td>
+      <td><%= link_to 'Destroy', detail_path(det),method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Back', details_path %>

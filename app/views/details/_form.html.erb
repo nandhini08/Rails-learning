@@ -1,0 +1,31 @@
+<%= form_with model:@detail, local: true do |form| %>
+<% if @detail.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@detail.errors.count, "error") %> prohibited
+        this from being saved:
+      </h2>
+      <ul>
+        <% @detail.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :FirstName %><br>
+    <%= form.text_field :FirstName %>
+  </p>
+ <p>
+    <%= form.label :LastName %><br>
+    <%= form.text_field :LastName %>
+  </p>
+  <p>
+    <%= form.label :Address %><br>
+    <%= form.text_area :Address %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
