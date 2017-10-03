@@ -6,10 +6,12 @@
 		<strong>Address:</strong>
 	<%=@detail.Address%>
 </p>
+
 <h2>Comments</h2>
 <%= render @detail.comments %>
 
 <h2> Leave a comment </h2>
 <%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_detail_path(@detail) %> |
 <%= link_to 'Back', details_path %>

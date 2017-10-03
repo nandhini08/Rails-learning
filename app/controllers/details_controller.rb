@@ -1,4 +1,5 @@
 class DetailsController < ApplicationController
+   http_basic_authenticate_with name: "abc", password: "secret", except: [:index, :show]
   def index
   	@details= Detail.all
   end
